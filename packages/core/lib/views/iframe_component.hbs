@@ -95,10 +95,24 @@
             </div>
           </div>
           <div class="MiyagiComponent-html">
-            {{{html}}}
+            <iframe id="{{ this.variation }}" class="Miyagi-frame" src="{{this.standaloneUrl}}"></iframe>
           </div>
         </div>
       {{/each}}
     </div>
+    <script>
+      const eventMethod = window.addEventListener
+        ? "addEventListener"
+        : "attachEvent";
+      const eventer = window[eventMethod];
+      const messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+      eventer(
+        messageEvent,
+        function (e) {
+          document.getElementById(e.data.id).style.height = `${e.data.height}px`;
+        },
+        false
+      );
+    </script>
   {{/content}}
 {{/extend}}

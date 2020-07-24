@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"{{#if embedded}} style="overflow: hidden;"{{/if}}>
 
   <head>
     <meta charset="utf-8">
@@ -21,6 +21,25 @@
 
   <body>
     {{{html}}}
+    <script>
+      function sendHeightToParent() {
+        window.parent.postMessage({ id: window.frameElement.id, height: document.body.offsetHeight }, "*");
+      }
+      window.addEventListener("load", () => {
+        sendHeightToParent();
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        const mo = new MutationObserver(() => {
+          sendHeightToParent();
+        });
+        mo.observe(document.documentElement, { attributes: true, childList: true, subtree: true });
+        const ro = new ResizeObserver((e) => {
+          sendHeightToParent();
+        });
+        ro.observe(document.documentElement);
+        sendHeightToParent();
+      });
+    </script>
   </body>
 
 </html>

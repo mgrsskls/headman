@@ -158,6 +158,52 @@ body {
   background-color: var(--Miyagi-color-Negative);
 }
 
+.Miyagi-frame {
+  display: block;
+  width: 100%;
+  border: none;
+  height: 100%;
+}
+
+.MiyagiComponent-head {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.MiyagiComponent-headMeta {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-left: 30px;
+}
+
+.MiyagiComponent-file {
+  align-items: center;
+  color: #767676;
+  display: inline-flex;
+  flex-wrap: wrap;
+  font-family: var(--Miyagi-fontFamily);
+  font-size: 0.875em;
+  letter-spacing: 0.0375em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.MiyagiComponent-file:hover,
+.MiyagiComponent-file:focus,
+.MiyagiComponent-file:active {
+  text-decoration: underline;
+}
+
+.MiyagiComponent-fileFolders {
+  color: #bbb;
+}
+
+.MiyagiComponent-html {
+  margin: calc(var(--Miyagi-spacing) / 2) 0 0;
+}
+
 .MiyagiContent .MiyagiError {
   align-items: center;
   color: var(--Miyagi-color-Negative);

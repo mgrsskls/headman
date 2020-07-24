@@ -2,14 +2,32 @@
   {{#content "body"}}
     <div class="MiyagiWrapper">
       <div id="MiyagiComponent" class="MiyagiComponentView">
-        {{{html}}}
+        <iframe class="Miyagi-frame" src="{{standaloneUrl}}"></iframe>
       </div>
     </div>
     <script>
       window.validations = {
-        html: {{htmlValidation}},
-        accessibility: {{accessibilityValidation}},
-      }
+        html: {{ htmlValidation }},
+        accessibility: {{ accessibilityValidation }},
+      };
+    </script>
+    <script>
+      const eventMethod = window.addEventListener
+        ? "addEventListener"
+        : "attachEvent";
+      const eventer = window[eventMethod];
+      const messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
+      eventer(
+        messageEvent,
+        function (e) {
+          const el = document.getElementById(e.data.id);
+
+          if (el) {
+            document.getElementById(e.data.id).style.height = `${e.data.height}px`;
+          }
+        },
+        false
+      );
     </script>
   {{/content}}
 {{/extend}}
