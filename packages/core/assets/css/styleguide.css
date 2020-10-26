@@ -1,0 +1,22 @@
+@import "./styleguide/index.css";
+
+.MiyagiIndex {
+  list-style: none !important;
+  display: flex !important;
+  margin: 40px 0 0 !important;
+  padding: 0 !important;
+}
+
+.MiyagiIndex-item:not(:last-child) {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.MiyagiIndex-item:not(:last-child)::after {
+  content: "" !important;
+  display: block !important;
+  width: 1px !important;
+  height: 1em !important;
+  background: currentColor !important;
+  margin: 0 0.5em !important;
+}

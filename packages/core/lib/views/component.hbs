@@ -1,5 +1,8 @@
-{{#extend "iframe_default"}}
+{{#extend "main"}}
   {{#content "body"}}
+    {{#if renderFileTabs}}
+    <link rel="stylesheet" href="miyagi/css/prism.{{theme.mode}}.css">
+    {{/if}}
     <div class="MiyagiWrapper">
       <div class="MiyagiContent">
         <div class="MiyagiDocumentation">

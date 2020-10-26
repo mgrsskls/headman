@@ -41,16 +41,14 @@ function render(app, component, request) {
   }
 
   const href = app.get("config").isBuild
-    ? `component-${component.normalizedShortPath}-embedded.html`
-    : `/component?file=${component.shortPath}&embedded=true`;
+    ? `show-${component.normalizedShortPath}-embedded.html`
+    : `/show?file=${component.shortPath}&embedded=true`;
 
   html += `<a class="${classes.component} ${classes.component}--lvl${
     component.index
-  } ${classes.link} ${classes.link}--lvl${
-    component.index
-  }" target="iframe" href="${href}"${current ? menuHelpers.activeState : ""}>${
-    component.name
-  }</a>`;
+  } ${classes.link} ${classes.link}--lvl${component.index}" href="${href}"${
+    current ? menuHelpers.activeState : ""
+  }>${component.name}</a>`;
 
   html += `<div class="${classes.listContainer}"${
     component.id ? ` id="${component.id}-variations"` : ""

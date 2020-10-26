@@ -4,30 +4,24 @@ class MainDev extends Main {
   constructor() {
     super();
 
-    this.paths = {
-      embedded: "component?",
-      container: "show?",
-    };
+    const tabs = Array.from(document.querySelectorAll(".MiyagiTabs"));
+    const styleguide = document.querySelector(".MiyagiStyleguide");
 
-    this.embeddedParam = "&embedded=true";
-    this.indexPath = `/${this.paths.embedded}file=all${this.embeddedParam}`;
-  }
-
-  onPopState() {
-    let path;
-
-    if (document.location.search !== "") {
-      path = `${document.location.href.replace(
-        this.paths.container,
-        this.paths.embedded
-      )}${this.embeddedParam}`;
-    } else {
-      path = this.indexPath;
+    if (tabs.length > 0) {
+      import("./_tabs.js").then((Tabs) => {
+        tabs.forEach((tab) => new Tabs.default(tab));
+      });
     }
 
-    path = path.replace(document.location.origin, "");
+    if (document.querySelector(".Miyagi-code")) {
+      import("./_prism.js");
+    }
 
-    super.onPopState(path);
+    if (styleguide) {
+      import("./styleguide/index.js").then(
+        (Styleguide) => new Styleguide.default(styleguide)
+      );
+    }
   }
 }
 

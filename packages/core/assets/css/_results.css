@@ -1,104 +1,104 @@
 .MiyagiResults + .MiyagiResults {
-  margin-top: var(--results-spacing);
+  margin-top: var(--results-spacing) !important;
 }
 
 .MiyagiResults-summary {
-  cursor: default;
-  list-style-type: none;
-  padding: 0 0 0 1.5rem;
-  position: relative;
-  white-space: nowrap;
+  cursor: default !important;
+  list-style-type: none !important;
+  padding: 0 0 0 15px !important;
+  position: relative !important;
+  white-space: nowrap !important;
 }
 
 .MiyagiResults-summary::after {
-  border: var(--Miyagi-toggle-border);
-  border-color: currentColor;
-  border-width: var(--Miyagi-toggle-borderWidth);
-  content: "";
-  display: block;
-  font-size: var(--Miyagi-toggle-fontSize);
-  height: var(--Miyagi-toggle-height);
-  left: 0.25rem;
-  position: absolute;
-  top: 50%;
-  transition: var(--Miyagi-toggle-transition);
-  width: var(--Miyagi-toggle-width);
+  border: var(--Miyagi-toggle-border) !important;
+  border-color: currentColor !important;
+  border-width: var(--Miyagi-toggle-borderWidth) !important;
+  content: "" !important;
+  display: block !important;
+  font-size: var(--Miyagi-toggle-fontSize) !important;
+  height: var(--Miyagi-toggle-height) !important;
+  left: 3px !important;
+  position: absolute !important;
+  top: 50% !important;
+  transition: var(--Miyagi-toggle-transition) !important;
+  width: var(--Miyagi-toggle-width) !important;
 }
 
 .MiyagiResults-summary::-webkit-details-marker {
-  display: none;
+  display: none !important;
 }
 
 .MiyagiResults:not([open]) .MiyagiResults-summary::after {
-  transform: var(--Miyagi-toggle-transition-closed);
+  transform: var(--Miyagi-toggle-transition-closed) !important;
 }
 
 .MiyagiResults[open] .MiyagiResults-summary::after {
-  transform: var(--Miyagi-toggle-transition-opened);
+  transform: var(--Miyagi-toggle-transition-opened) !important;
 }
 
 .MiyagiResults-value:not(:last-child) {
-  padding-right: 1rem;
+  padding-right: 10px !important;
 }
 
 .MiyagiResults-value.has-positiveValue {
-  border-radius: 0.25em;
-  color: #fff;
-  display: inline-block;
-  line-height: 1.2;
-  min-width: 1.2em;
-  padding: 0 0.5rem;
-  text-align: center;
+  border-radius: 0.25em !important;
+  color: #fff !important;
+  display: inline-block !important;
+  line-height: 1.2 !important;
+  min-width: 1.2em !important;
+  padding: 0 5px !important;
+  text-align: center !important;
 }
 
 .MiyagiResults-value--positive {
-  color: var(--Miyagi-color-Positive);
+  color: var(--Miyagi-color-Positive) !important;
 }
 
 .MiyagiResults-value--positive.has-positiveValue {
-  background: var(--Miyagi-color-Positive);
+  background: var(--Miyagi-color-Positive) !important;
 }
 
 .MiyagiResults-value--neutral {
-  color: var(--Miyagi-color-Text);
+  color: var(--Miyagi-content-color-Text) !important;
 }
 
 .MiyagiResults-value--neutral.has-positiveValue {
-  background: var(--Miyagi-color-Text);
+  background: var(--Miyagi-content-color-Text) !important;
 }
 
 .MiyagiResults-value--negative {
-  color: var(--Miyagi-color-Negative);
+  color: var(--Miyagi-color-Negative) !important;
 }
 
 .MiyagiResults-value--negative.has-positiveValue {
-  background: var(--Miyagi-color-Negative);
+  background: var(--Miyagi-color-Negative) !important;
 }
 
 .MiyagiResults-value--warning {
-  color: var(--Miyagi-color-Warning);
+  color: var(--Miyagi-color-Warning) !important;
 }
 
 .MiyagiResults-value--warning.has-positiveValue {
-  background: var(--Miyagi-color-Warning);
+  background: var(--Miyagi-color-Warning) !important;
 }
 
 .MiyagiResults-details {
-  margin: 1rem 0 1rem 0;
+  margin: 10px 0 10px 0 !important;
 }
 
 .MiyagiResults-empty {
-  font-style: italic;
+  font-style: italic !important;
 }
 
 @media (pointer: coarse) {
   .MiyagiResults + .MiyagiResults {
-    --results-spacing: 0.75rem;
+    --results-spacing: 7px;
   }
 }
 
 @media (pointer: fine) {
   .MiyagiResults + .MiyagiResults {
-    --results-spacing: 0.5rem;
+    --results-spacing: 5px;
   }
 }

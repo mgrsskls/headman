@@ -124,7 +124,7 @@ module.exports = function Router(app) {
       } else if (checkIfRequestedComponentIsValid(app, file)) {
         if (variation) {
           if (checkIfRequestedVariationIsValid(app, file, variation)) {
-            await render.renderMainComponent({ app, res, file, variation });
+            await render.renderMainVariation({ app, res, file, variation });
           } else {
             await render.renderMain404({ app, res, file, variation });
           }
@@ -140,36 +140,30 @@ module.exports = function Router(app) {
   app.get(
     "/component",
     awaitHandlerFactory(async (req, res) => {
-      const { file, variation, embedded } = req.query;
+      const { file, variation } = req.query;
 
-      if (file === "all") {
-        await render.renderIframeIndex({ app, res });
-      } else if (checkIfRequestedComponentIsValid(app, file)) {
-        if (variation) {
-          if (checkIfRequestedVariationIsValid(app, file, variation)) {
-            await render.renderIframeVariation({
-              app,
-              res,
-              file,
-              variation,
-              embedded,
-            });
-          } else {
-            await render.renderIframe404({
-              app,
-              res,
-              embedded,
-              target: "Variation",
-            });
-          }
+      if (checkIfRequestedComponentIsValid(app, file)) {
+        if (
+          variation &&
+          checkIfRequestedVariationIsValid(app, file, variation)
+        ) {
+          await render.renderIframeVariation({
+            app,
+            res,
+            file,
+            variation,
+          });
         } else {
-          await render.renderIframeComponent({ app, res, file });
+          await render.renderIframe404({
+            app,
+            res,
+            target: "Variation",
+          });
         }
       } else {
         await render.renderIframe404({
           app,
           res,
-          embedded,
           target: "Component",
         });
       }
@@ -188,7 +182,6 @@ module.exports = function Router(app) {
       await render.renderIframe404({
         app,
         res,
-        embedded: true,
         target: "Page",
       });
     } else {

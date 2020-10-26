@@ -1,0 +1,129 @@
+@import "./colors.css";
+@import "./fonts.css";
+@import "./spacings.css";
+
+.MiyagiContent .MiyagiCustomPropsGroup {
+  list-style: none !important;
+  margin: 3em 0 !important;
+  padding: 0 !important;
+}
+
+.MiyagiContent .MiyagiCustomProp {
+  position: relative !important;
+  border: 1px solid transparent !important;
+}
+
+.MiyagiContent .MiyagiCustomProp[aria-selected="true"] {
+  position: relative !important;
+}
+
+.MiyagiContent .MiyagiCustomProp-prop,
+.MiyagiContent .MiyagiCustomProp-value {
+  color: #767676 !important;
+  display: block !important;
+  margin: 10px 0 0 !important;
+}
+
+.MiyagiContent .MiyagiCustomProp-prop {
+  word-break: break-all !important;
+}
+
+.MiyagiContent .MiyagiCustomProp-value {
+  display: none !important;
+}
+
+.MiyagiContent .MiyagiCustomProp-button {
+  background: none !important;
+  border: none !important;
+  appearance: none !important;
+  font: inherit !important;
+  width: 100% !important;
+  padding: 0 !important;
+  text-align: left !important;
+}
+
+.MiyagiContent .MiyagiCustomProp-button:focus {
+  outline: none !important;
+}
+
+.MiyagiContent
+  .MiyagiCustomProp-button:not([aria-expanded="true"]):hover
+  .MiyagiCustomProp-prop,
+.MiyagiContent
+  .MiyagiCustomProp-button:not([aria-expanded="true"]):focus
+  .MiyagiCustomProp-prop {
+  text-decoration: underline !important;
+}
+
+.MiyagiContent .MiyagiCustomProp-details {
+  --bg-color: #f5f5f5;
+  --outline-color: #ddd;
+
+  position: absolute !important;
+  bottom: calc(100% + 15px) !important;
+  left: 0 !important;
+  padding: 15px !important;
+  margin: 0 !important;
+  z-index: 1 !important;
+  background: var(--bg-color) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+  outline: 1px solid var(--outline-color) !important;
+  box-sizing: border-box !important;
+  font-size: 14px !important;
+  display: none !important;
+  grid-template-columns: fit-content(50%) 1fr !important;
+  grid-gap: 5px 10px !important;
+  line-height: 1.5 !important;
+  white-space: nowrap !important;
+}
+
+.MiyagiTheme--dark .MiyagiContent .MiyagiCustomProp-details {
+  --bg-color: #333;
+  --outline-color: #444;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.MiyagiContent .MiyagiCustomProp-details:not([hidden]),
+.MiyagiContent .MiyagiCustomProp-button:hover + .MiyagiCustomProp-details {
+  display: grid !important;
+  animation: fadeIn 0.15s ease !important;
+}
+
+.MiyagiContent .MiyagiCustomProp-details::before,
+.MiyagiContent .MiyagiCustomProp-details::after {
+  content: "" !important;
+  display: block !important;
+  position: absolute !important;
+  left: 15px !important;
+  width: 0 !important;
+  height: 0 !important;
+  border: 10px solid transparent !important;
+}
+
+.MiyagiContent .MiyagiCustomProp-details::before {
+  border-top-color: var(--outline-color) !important;
+  top: 100% !important;
+}
+
+.MiyagiContent .MiyagiCustomProp-details::after {
+  border-top-color: var(--bg-color) !important;
+  top: calc(100% - 2px) !important;
+}
+
+.MiyagiContent .MiyagiCustomProp-detailsProperty {
+  font-weight: 600 !important;
+}
+
+.MiyagiContent .MiyagiCustomProp-detailsValue {
+  margin: 0 !important;
+}

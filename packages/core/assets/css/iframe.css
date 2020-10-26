@@ -1,55 +1,57 @@
 @import "./iframe/theme.css";
-@import "./iframe/styleguide/index.css";
-
-.MiyagiContent *,
-.MiyagiIframe-newTabLink {
-  all: revert;
-}
 
 html {
-  height: 100%;
+  height: 100% !important;
 }
 
 body {
-  margin: 0;
-  min-height: 100%;
-  background: var(--Miyagi-color-Background);
+  margin: 0 !important;
+  min-height: 100% !important;
+  background: var(--Miyagi-content-color-Background) !important;
 }
 
 .MiyagiWrapper {
-  box-sizing: border-box;
-  padding: var(--Miyagi-spacing);
-  width: 100%;
+  box-sizing: border-box !important;
+  padding: var(--Miyagi-spacing) !important;
+  width: 100% !important;
+  position: relative;
+}
+
+.MiyagiWrapper > .MiyagiIframe-newTabLink {
+  position: absolute !important;
+  right: var(--Miyagi-spacing) !important;
+  top: calc(var(--Miyagi-spacing) / 2) !important;
+  transform: translateY(-50%) !important;
 }
 
 .MiyagiContent,
 .MiyagiIframe-newTabLink,
 .MiyagiContent .MiyagiComponent-head {
-  font-family: var(--Miyagi-fontFamily);
-  line-height: 1;
+  font-family: var(--Miyagi-fontFamily) !important;
+  line-height: 1 !important;
 }
 
 .MiyagiContent {
-  color: var(--Miyagi-color-Text);
+  color: var(--Miyagi-content-color-Text) !important;
 }
 
 .MiyagiContent a {
-  color: var(--Miyagi-color-Link);
-  text-decoration: underline;
+  color: var(--Miyagi-content-color-Link) !important;
+  text-decoration: underline !important;
 }
 
 .MiyagiContent code[class*="language-"],
 .MiyagiContent pre[class*="language-"] {
-  text-shadow: none;
-  box-shadow: none;
-  border-radius: 0;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
 }
 
 .MiyagiContent .MiyagiDocumentation code,
 .MiyagiContent .Miyagi-code code,
 .MiyagiContent :not(pre) > code[class*="language-"] {
-  font-size-adjust: 0.525;
-  text-shadow: none;
+  font-size-adjust: 0.525 !important;
+  text-shadow: none !important;
 }
 
 .MiyagiContent .MiyagiDocumentation,
@@ -57,317 +59,299 @@ body {
 .MiyagiContent .Miyagi-code code,
 .MiyagiContent :not(pre) > code[class*="language-"],
 .MiyagiContent .MiyagiErrorMessage {
-  line-height: calc(1ex / 0.32);
+  line-height: calc(1ex / 0.32) !important;
 }
 
 .MiyagiContent .MiyagiInformation code,
 .MiyagiContent .MiyagiDocumentation code,
 .MiyagiContent .Miyagi-code code,
 .MiyagiContent :not(pre) > code[class*="language-"] {
-  font-family: "Menlo", "Monaco", monospace;
+  font-family: "Menlo", "Monaco", monospace !important;
 }
 
 .MiyagiContent .MiyagiDocumentation h1 {
-  color: var(--Miyagi-color-Headline1);
-  font-size: 2.4em;
-  font-weight: bold;
-  line-height: 1;
+  color: var(--Miyagi-content-color-Headline1) !important;
+  font-size: 2.4em !important;
+  font-weight: bold !important;
+  line-height: 1 !important;
 }
 
 .MiyagiContent .MiyagiDocumentation > * + * {
-  margin-top: calc(1ex / 0.32);
+  margin-top: calc(1ex / 0.32) !important;
 }
 
 .MiyagiContent .MiyagiDocumentation i {
-  font-style: italic;
+  font-style: italic !important;
 }
 
 .MiyagiContent .MiyagiInformation-val {
-  margin-left: 0;
+  margin-left: 0 !important;
 }
 
 .MiyagiContent .MiyagiComponent-headMeta > *:not(:first-child) {
-  margin-left: 15px;
-  padding-left: 15px;
-  border-left: 1px solid;
+  margin-left: 15px !important;
+  padding-left: 15px !important;
+  border-left: 1px solid !important;
 }
 
 .MiyagiContent .MiyagiDocumentation > *:first-child {
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 
 .MiyagiContent .MiyagiDocumentation p {
-  max-width: 64ch;
+  max-width: 64ch !important;
 }
 
 .MiyagiContent .Miyagi-sectionTitle {
-  align-items: center;
-  color: var(--Miyagi-color-Headline2);
-  display: flex;
-  font-size: 1.6em;
-  margin: 2em 0 1em;
-  scroll-margin-top: 1.5em;
+  align-items: center !important;
+  color: var(--Miyagi-content-color-Headline2) !important;
+  display: flex !important;
+  font-size: 1.6em !important;
+  margin: 2em 0 1em !important;
+  scroll-margin-top: 1.5em !important;
 }
 
 .MiyagiContent .Miyagi-sectionTitle::after {
-  background: var(--Miyagi-color-Headline2-divider);
-  content: "";
-  flex: 1;
-  height: 1px;
-  margin-left: 20px;
+  background: var(--Miyagi-content-color-Headline2-divider) !important;
+  content: "" !important;
+  flex: 1 !important;
+  height: 1px !important;
+  margin-left: 20px !important;
 }
 
 .MiyagiContent .MiyagiInformation-wrapper + .MiyagiInformation-wrapper {
-  margin-top: 30px;
+  margin-top: 30px !important;
 }
 
 .MiyagiContent .MiyagiInformation-attr {
-  color: var(--Miyagi-color-TextSecondary);
-  font-family: var(--Miyagi-fontFamily);
-  font-size: 0.875em;
-  letter-spacing: 0.0375em;
-  text-decoration: none;
-  text-transform: uppercase;
+  color: var(--Miyagi-content-color-TextSecondary) !important;
+  font-family: var(--Miyagi-fontFamily) !important;
+  font-size: 0.875em !important;
+  letter-spacing: 0.0375em !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
 }
 
 .MiyagiContent .MiyagiInformation-attr:not(:first-child) {
-  margin-top: 1em;
+  margin-top: 1em !important;
 }
 
 .MiyagiContent .MiyagiInformation code,
 .MiyagiContent .MiyagiDocumentation code {
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 
 .MiyagiContent .MiyagiStatus::before {
   --size: 0.7em;
 
-  border-radius: 50%;
-  content: "";
-  display: inline-block;
-  height: var(--size);
-  margin: 0 0.25em 0 0;
-  width: var(--size);
+  border-radius: 50% !important;
+  content: "" !important;
+  display: inline-block !important;
+  height: var(--size) !important;
+  margin: 0 0.25em 0 0 !important;
+  width: var(--size) !important;
 }
 
 .MiyagiContent .MiyagiStatus--valid::before {
-  background-color: var(--Miyagi-color-Positive);
+  background-color: var(--Miyagi-content-color-Positive) !important;
 }
 
 .MiyagiContent .MiyagiStatus--invalid::before {
-  background-color: var(--Miyagi-color-Negative);
+  background-color: var(--Miyagi-content-color-Negative) !important;
 }
 
 .Miyagi-frame {
-  display: block;
-  width: 100%;
-  border: none;
-  height: 100%;
+  display: block !important;
+  width: 100% !important;
+  border: none !important;
 }
 
 .MiyagiComponent-head {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: flex !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
 }
 
 .MiyagiComponent-headMeta {
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  margin-left: 30px;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 14px !important;
+  margin-left: 30px !important;
 }
 
 .MiyagiComponent-file {
-  align-items: center;
-  color: #767676;
-  display: inline-flex;
-  flex-wrap: wrap;
-  font-family: var(--Miyagi-fontFamily);
-  font-size: 0.875em;
-  letter-spacing: 0.0375em;
-  text-decoration: none;
-  text-transform: uppercase;
+  align-items: center !important;
+  color: #767676 !important;
+  display: inline-flex !important;
+  flex-wrap: wrap !important;
+  font-family: var(--Miyagi-fontFamily) !important;
+  font-size: 0.875em !important;
+  letter-spacing: 0.0375em !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
 }
 
 .MiyagiComponent-file:hover,
 .MiyagiComponent-file:focus,
 .MiyagiComponent-file:active {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 .MiyagiComponent-fileFolders {
-  color: #bbb;
+  color: #bbb !important;
 }
 
 .MiyagiComponent-html {
-  margin: calc(var(--Miyagi-spacing) / 2) 0 0;
+  margin: calc(var(--Miyagi-spacing) / 2) 0 0 !important;
 }
 
 .MiyagiContent .MiyagiError {
-  align-items: center;
-  color: var(--Miyagi-color-Negative);
-  display: flex;
-  height: 100%;
-  justify-content: center;
-  margin: 0;
+  align-items: center !important;
+  color: var(--Miyagi-content-color-Negative) !important;
+  display: flex !important;
+  height: 100% !important;
+  justify-content: center !important;
+  margin: 0 !important;
 }
 
 .MiyagiContent .MiyagiErrorMessage {
-  color: var(--Miyagi-color-Negative);
-  margin: 1.5em 0;
+  color: var(--Miyagi-content-color-Negative) !important;
+  margin: 1.5em 0 !important;
 }
 
 .MiyagiIframe-newTabLink {
-  color: var(--Miyagi-color-NewTabLink);
-  align-items: center;
-  display: flex;
-  font-weight: normal;
-  text-decoration: underline;
+  color: var(--Miyagi-content-color-NewTabLink) !important;
+  align-items: center !important;
+  display: flex !important;
+  font-weight: normal !important;
+  font-size: 14px !important;
+  text-decoration: underline !important;
 }
 
 .MiyagiIframe-newTabLink svg {
   --size: 1.2em;
 
-  height: var(--size);
-  margin-right: 0.5em;
-  width: var(--size);
-  stroke: currentColor;
-  stroke-width: 2px;
-  fill: none;
+  height: var(--size) !important;
+  margin-right: 0.5em !important;
+  width: var(--size) !important;
+  stroke: currentColor !important;
+  stroke-width: 2px !important;
+  fill: none !important;
 }
 
 .MiyagiContent .MiyagiTabs-nav {
-  display: flex;
-  list-style: none;
-  margin: 0 0 -1px;
-  padding: 0;
+  display: flex !important;
+  list-style: none !important;
+  margin: 0 0 -1px !important;
+  padding: 0 !important;
 }
 
 .MiyagiContent .MiyagiTabs-button {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  background: none;
-  padding: 0 15px;
-  font: inherit;
-  color: inherit;
-  line-height: 2.5;
-  border: 0 solid transparent;
-  border-width: 1px 1px 0 1px;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background: none !important;
+  padding: 0 15px !important;
+  font: inherit !important;
+  color: inherit !important;
+  line-height: 2.5 !important;
+  border: 0 solid transparent !important;
+  border-width: 1px 1px 0 1px !important;
 }
 
 .MiyagiContent .MiyagiTabs-button[aria-selected="true"],
 .MiyagiContent pre[class*="language-"],
 .MiyagiContent .Miyagi-code,
 .MiyagiContent :not(pre) > code[class*="language-"] {
-  background: var(--Miyagi-color-Code-background);
+  background: var(--Miyagi-content-color-Code-background) !important;
 }
 
 .MiyagiContent .MiyagiTabs-button[aria-selected="true"],
 .MiyagiContent :not(pre) > code[class*="language-"],
 .MiyagiContent pre[class*="language-"] {
-  border-color: var(--Miyagi-color-Code-outline);
+  border-color: var(--Miyagi-content-color-Code-outline) !important;
 }
 
 .MiyagiContent .Miyagi-code,
 .MiyagiContent :not(pre) > code[class*="language-"] {
-  border: 1px solid var(--Miyagi-color-Code-outline);
-  padding: calc(var(--Miyagi-spacing) / 2);
+  border: 1px solid var(--Miyagi-content-color-Code-outline) !important;
+  padding: calc(var(--Miyagi-spacing) / 2) !important;
 }
 
 .MiyagiContent .Miyagi-code,
 .MiyagiContent pre[class*="language-"] {
-  font-size: 0.875em;
+  font-size: 0.875em !important;
 }
 
 .MiyagiContent .MiyagiTabs-tab[hidden] {
-  display: none;
+  display: none !important;
 }
 
 .MiyagiContent .MiyagiTabs-tab > *:first-child {
-  margin-top: 0;
+  margin-top: 0 !important;
 }
 
 .MiyagiComponent:not(:last-child) {
-  margin-bottom: calc(2 * var(--Miyagi-spacing));
+  margin-bottom: calc(2 * var(--Miyagi-spacing)) !important;
 }
 
 .MiyagiComponent .MiyagiComponent-head {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
+  display: flex !important;
+  justify-content: space-between !important;
+  flex-wrap: wrap !important;
 }
 
 .MiyagiComponent .MiyagiComponent-headMeta {
-  display: flex;
-  align-items: center;
-  font-size: 14px;
-  margin-left: 30px;
+  display: flex !important;
+  align-items: center !important;
+  font-size: 14px !important;
+  margin-left: 30px !important;
 }
 
 .MiyagiComponent .MiyagiComponent-file {
-  align-items: center;
-  color: var(--Miyagi-color-TextSecondary);
-  display: inline-flex;
-  flex-wrap: wrap;
-  font-family: var(--Miyagi-fontFamily);
-  font-size: 0.875em;
-  letter-spacing: 0.0375em;
-  text-decoration: none;
-  text-transform: uppercase;
+  align-items: center !important;
+  color: var(--Miyagi-content-color-TextSecondary) !important;
+  display: inline-flex !important;
+  flex-wrap: wrap !important;
+  font-family: var(--Miyagi-fontFamily) !important;
+  font-size: 0.875em !important;
+  letter-spacing: 0.0375em !important;
+  text-decoration: none !important;
+  text-transform: uppercase !important;
 }
 
 .MiyagiComponent .MiyagiComponent-file:hover,
 .MiyagiComponent .MiyagiComponent-file:focus,
 .MiyagiComponent .MiyagiComponent-file:active {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 .MiyagiComponent .MiyagiComponent-fileFolders {
-  color: var(--Miyagi-color-TextTertiary);
+  color: var(--Miyagi-content-color-TextTertiary) !important;
 }
 
 .MiyagiComponent .MiyagiComponent-html {
-  margin: calc(var(--Miyagi-spacing) / 2) 0 0;
+  margin: calc(var(--Miyagi-spacing) / 2) 0 0 !important;
 }
 
 .MiyagiComponentView {
-  border: 1px solid var(--Miyagi-color-Outline);
-  box-sizing: border-box;
+  border: 1px solid var(--Miyagi-content-color-Outline) !important;
+  box-sizing: border-box !important;
   height: calc(100vh - 2 * var(--Miyagi-spacing));
-  overflow: auto;
-  resize: both;
+  overflow: auto !important;
+  resize: both !important;
   width: 100%;
 }
 
+.MiyagiComponentView .Miyagi-frame {
+  height: 100% !important;
+}
+
 .MiyagiWrapper ~ .MiyagiIframe-newTabLink {
-  line-height: 40px;
-  position: absolute;
-  right: 40px;
-  top: 0;
-  font-size: 14px;
-}
-
-.MiyagiIndex {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-
-.MiyagiIndex-item:not(:last-child) {
-  display: flex;
-  align-items: center;
-}
-
-.MiyagiIndex-item:not(:last-child)::after {
-  content: "";
-  display: block;
-  width: 1px;
-  height: 1em;
-  background: currentColor;
-  margin: 0 0.5em;
+  line-height: 40px !important;
+  position: absolute !important;
+  right: 40px !important;
+  top: 0 !important;
 }
 
 @media screen and (prefers-reduced-motion) {

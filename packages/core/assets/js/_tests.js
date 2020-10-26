@@ -55,7 +55,7 @@ function a11yTest(container) {
 
   addToggleClickListener(container);
 
-  axe.run(document.getElementById("MiyagiComponent"), function (err, results) {
+  axe.run(document.getElementById("container"), function (err, results) {
     if (err) throw err;
 
     states.forEach((state) => {
@@ -238,7 +238,7 @@ function htmlTest(container) {
 }
 
 export default (tests) => {
-  if (document.getElementById("MiyagiComponent")) {
+  if (tests) {
     const a11yContainer = parent.document.querySelector(".MiyagiTest--a11y");
     const htmlContainer = parent.document.querySelector(".MiyagiTest--html");
 
@@ -261,7 +261,5 @@ export default (tests) => {
     if (window.validations.accessibility || window.validations.html) {
       tests.removeAttribute("hidden");
     }
-  } else {
-    tests.setAttribute("hidden", true);
   }
 };

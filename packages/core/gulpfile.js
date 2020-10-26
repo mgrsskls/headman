@@ -11,10 +11,10 @@ const terser = require("rollup-plugin-terser");
 
 const buildFolder = "dist/";
 const jsFolder = "assets/js/";
-const jsFiles = ["iframe.js", "iframe.build.js", "main.js", "main.build.js"];
+const jsFiles = ["iframe.js", "main.js", "main.build.js"];
 const cssFiles = [
-  "assets/css/iframe.css",
   "assets/css/main.css",
+  "assets/css/styleguide.css",
   "assets/css/prism.light.css",
   "assets/css/prism.dark.css",
 ];

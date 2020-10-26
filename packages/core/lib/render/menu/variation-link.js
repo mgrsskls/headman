@@ -19,18 +19,18 @@ const menuHelpers = require("./helpers.js");
  */
 function render(isBuild, component, variation, isCurrent) {
   const href = isBuild
-    ? `component-${
+    ? `show-${
         component.normalizedShortPath
       }-variation-${helpers.normalizeString(variation.name)}-embedded.html`
-    : `/component?file=${component.shortPath}&variation=${encodeURI(
+    : `/show?file=${component.shortPath}&variation=${encodeURI(
         variation.name
       )}&embedded=true`;
 
   return `<a class="${classes.link} ${classes.link}--lvl${component.index} ${
     classes.link
-  }--variation" target="iframe" href="${href}"${
-    isCurrent ? menuHelpers.activeState : ""
-  }>${variation.name}</a>`;
+  }--variation" href="${href}"${isCurrent ? menuHelpers.activeState : ""}>${
+    variation.name
+  }</a>`;
 }
 
 module.exports = {

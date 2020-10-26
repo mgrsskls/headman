@@ -17,15 +17,21 @@
           {{#if theme.navigation.colorLinksActive}}--Miyagi-color-Link-active: {{theme.navigation.colorLinksActive}};{{/if}}
           {{#if theme.navigation.colorLinksActiveBackground}}--Miyagi-color-Link-active-background: {{theme.navigation.colorLinksActiveBackground}};{{/if}}
         {{/if}}
-        {{#if theme.fontFamily}}--Miyagi-fontFamily: {{theme.fontFamily}};{{/if}}
+        {{#if theme.content}}
+          {{#if theme.content.colorText}}--Miyagi-content-color: {{ theme.content.colorText }};{{/if}}
+          {{#if theme.content.colorBackground}}--Miyagi-content-colorBackground: {{ theme.content.colorBackground }};{{/if}}
+          {{#if theme.content.colorHeadline1}}--Miyagi-content-color-Headline1: {{ theme.content.colorHeadline1 }};{{/if}}
+          {{#if theme.content.colorHeadline2}}--Miyagi-content-color-Headline2: {{ theme.content.colorHeadline2 }};{{/if}}
+        {{/if}}
+        {{#if theme.fontFamily}}--Miyagi-fontFamily: "{{theme.fontFamily}}";{{/if}}
       }
     </style>
   </head>
   <body class="Miyagi">
     <nav class="Miyagi-nav">
       <h1 class="Miyagi-title">
-        <a class="Miyagi-link Miyagi-link--showAll{{#if theme.logo}} has-logo{{/if}}" href="{{ indexPath }}"
-          target="iframe" {{#if showAll }} aria-current="page" {{/if}}>
+        <a class="Miyagi-link Miyagi-link--showAll{{#if theme.logo}} has-logo{{/if}}" href="/"
+          {{#if showAll }} aria-current="page" {{/if}}>
           {{#if theme.logo}}
             <img class="Miyagi-projectLogo" src="{{ theme.logo }}" alt="{{ userProjectName }}">
           {{/if}}
@@ -50,24 +56,26 @@
 
     <main class="Miyagi-content">
       <div class="Miyagi-frameWrapper">
-        <iframe class="Miyagi-frame" id="iframe" src="{{iframeSrc}}" name="iframe" title="Components"></iframe>
+        {{#block "body"}}{{/block}}
       </div>
     </main>
 
-    <aside class="Miyagi-tests" {{#if hideTests}} hidden{{/if}}>
-      {{#each tests}}
-        <div class="MiyagiTest MiyagiTest--{{this.alias}}" hidden>
-          <b class="MiyagiTest-title">{{this.title}}</b>
-          {{#each this.results}}
-            <details class="MiyagiResults MiyagiResults--{{this.alias}}">
-              <summary class="MiyagiResults-summary">
-                {{this.label}}: <span class="MiyagiResults-value MiyagiResults-value--{{this.class}}">0</span>
-              </summary>
-              <div class="MiyagiResults-details"></div>
-            </details>
-          {{/each}}
-        </div>
-      {{/each}}
-    </aside>
+    {{#if tests}}
+      <aside class="Miyagi-tests" {{#if hideTests}} hidden{{/if}}>
+        {{#each tests}}
+          <div class="MiyagiTest MiyagiTest--{{this.alias}}" hidden>
+            <b class="MiyagiTest-title">{{this.title}}</b>
+            {{#each this.results}}
+              <details class="MiyagiResults MiyagiResults--{{this.alias}}">
+                <summary class="MiyagiResults-summary">
+                  {{this.label}}: <span class="MiyagiResults-value MiyagiResults-value--{{this.class}}">0</span>
+                </summary>
+                <div class="MiyagiResults-details"></div>
+              </details>
+            {{/each}}
+          </div>
+        {{/each}}
+      </aside>
+    {{/if}}
   </body>
 </html>

@@ -1,4 +1,4 @@
-{{#extend "iframe_default"}}
+{{#extend "main"}}
   {{#content "body"}}
     <div class="MiyagiWrapper">
       <div class="MiyagiContent">
@@ -7,6 +7,11 @@
           {{{documentation}}}
         </div>
 
+        {{#if customProperties}}
+        {{#each customProperties.files}}
+          <link rel="stylesheet" href="{{this}}">
+        {{/each}}
+        {{/if}}
         <div class="MiyagiStyleguide" data-media-queries='{{mediaQueries}}'>
           <ul class="MiyagiIndex">
             {{#if colors}}

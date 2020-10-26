@@ -1,43 +1,43 @@
 .MiyagiResult:not(:first-child) {
-  margin-top: 1.5rem;
+  margin-top: 15px !important;
 }
 
 .MiyagiResult-data {
-  border-left: 0.2rem solid #ccc;
-  padding: 0 0 0 1rem;
+  border-left: 2px solid #ccc !important;
+  padding: 0 0 0 10px !important;
 }
 
 .MiyagiResult-attr,
 .MiyagiResult-value {
-  display: inline;
+  display: inline !important;
 }
 
 .MiyagiResult-attr {
-  font-weight: bold;
+  font-weight: bold !important;
 }
 
 .MiyagiResult-attr::after {
-  content: ":";
-  display: inline;
+  content: ":" !important;
+  display: inline !important;
 }
 
 .MiyagiResult a {
-  color: currentColor;
-  padding: 0 0.35rem;
-  position: relative;
-  word-break: break-all;
+  color: currentColor !important;
+  padding: 0 4px !important;
+  position: relative !important;
+  word-break: break-all !important;
 }
 
 .MiyagiResult a:hover,
 .MiyagiResult a:focus,
 .MiyagiResult a:active {
-  background: var(--Miyagi-color-Link);
-  border-radius: var(--Miyagi-borderRadius);
-  box-shadow: 0 0.2rem 0 var(--Miyagi-color-Link);
-  color: var(--Miyagi-color-Link-active);
-  text-decoration: none;
+  background: var(--Miyagi-content-color-Text) !important;
+  border-radius: var(--Miyagi-borderRadius) !important;
+  box-shadow: 0 2px 0 var(--Miyagi-content-color-Text) !important;
+  color: var(--Miyagi-color-Background2) !important;
+  text-decoration: none !important;
 }
 
 .MiyagiResult-extract {
-  font-family: "Menlo", "Monaco", monospace;
+  font-family: "Menlo", "Monaco", monospace !important;
 }

@@ -1,18 +1,18 @@
 .MiyagiTest {
-  font-size: 1.4rem;
+  font-size: 14px !important;
 }
 
 .MiyagiTest:not(:first-child) {
-  margin-top: var(--Miyagi-spacing-y);
+  margin-top: var(--Miyagi-spacing-y) !important;
 }
 
 .MiyagiTest:last-child {
-  margin-bottom: var(--Miyagi-spacing-y);
+  margin-bottom: var(--Miyagi-spacing-y) !important;
 }
 
 .MiyagiTest-title {
-  color: var(--Miyagi-colorHeadlines);
-  display: block;
-  font-weight: bold;
-  margin: 0 0 0.5rem;
+  color: var(--Miyagi-content-color-Headline1) !important;
+  display: block !important;
+  font-weight: bold !important;
+  margin: 0 0 5px !important;
 }

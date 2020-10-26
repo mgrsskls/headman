@@ -45,7 +45,7 @@ async function register(shortPath, fullFilePath) {
  */
 async function registerLayouts() {
   return Promise.all(
-    ["iframe_default"].map(
+    ["main"].map(
       (layout) =>
         new Promise((resolve) => {
           register(

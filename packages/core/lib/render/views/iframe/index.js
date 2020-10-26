@@ -99,13 +99,13 @@ module.exports = async function renderIframeIndex({ app, res, cb }) {
 
                 arr[i] = {
                   url: app.get("config").isBuild
-                    ? `component-${helpers.normalizeString(
+                    ? `show-${helpers.normalizeString(
                         componentPath.replace(
                           `.${app.get("config").files.templates.extension}`,
                           ""
                         )
                       )}-embedded.html`
-                    : `/component?file=${file}&embedded=true`,
+                    : `/show?file=${file}&embedded=true`,
                   standaloneUrl: app.get("config").isBuild
                     ? `component-${helpers.normalizeString(
                         componentPath.replace(
@@ -163,7 +163,6 @@ module.exports = async function renderIframeIndex({ app, res, cb }) {
         components: arr,
         dev: process.env.NODE_ENV === "development",
         prod: process.env.NODE_ENV === "production",
-        a11yTestsPreload: ui.validations.accessibility,
         projectName: config.projectName,
         userProjectName: app.get("config").projectName,
         isBuild: app.get("config").isBuild,

@@ -1,140 +1,145 @@
 .Miyagi-projectLogo {
-  max-width: 100%;
-  min-width: 50%;
+  max-width: 100% !important;
+  min-width: 50% !important;
 }
 
 .Miyagi-projectLogo + .Miyagi-projectName {
-  display: none;
+  display: none !important;
 }
 
 .Miyagi-menu {
-  font-size: 1.4rem;
-  margin: var(--Miyagi-spacing-y) 0 0 1.5rem;
+  font-size: 14px !important;
+  margin: var(--Miyagi-spacing-y) 0 0 15px !important;
 }
 
 [aria-expanded="true"] ~ .Miyagi-listContainer {
-  display: block;
+  display: block !important;
 }
 
 [aria-expanded="false"] ~ .Miyagi-listContainer {
-  display: none;
+  display: none !important;
 }
 
 .Miyagi-listItem {
-  position: relative;
+  position: relative !important;
 }
 
 .Miyagi-listItem--directory.Miyagi-listItem--lvl0 {
-  padding-bottom: 1em;
+  padding-bottom: 1em !important;
 }
 
 .Miyagi-list--variations,
 .Miyagi-list--components:not(.Miyagi-list--lvl0) {
-  padding-top: var(--spacingTop);
+  padding-top: var(--spacingTop) !important;
 }
 
 .Miyagi-list--variations + .Miyagi-list--components {
-  padding-bottom: 0.5rem;
-  padding-top: 1rem;
+  padding-bottom: 5px !important;
+  padding-top: 10px !important;
 }
 
 .Miyagi-link,
 .Miyagi-component {
-  display: block;
-  padding: 0 var(--Miyagi-linkSpacing);
+  display: block !important;
+  padding: 0 var(--Miyagi-linkSpacing) !important;
 }
 
 .Miyagi-component:not(.Miyagi-link) {
-  color: var(--Miyagi-color-Link);
-  cursor: default;
+  color: var(--Miyagi-color-Link) !important;
+  cursor: default !important;
 }
 
 .Miyagi-component:not(.Miyagi-link):last-child {
-  opacity: 0.6;
+  opacity: 0.6 !important;
 }
 
 .Miyagi-link {
-  color: var(--Miyagi-color-Link);
-  text-decoration: none;
+  color: var(--Miyagi-color-Link) !important;
+  text-decoration: none !important;
 }
 
 .Miyagi-link:hover,
 .Miyagi-link:focus {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 .Miyagi-link--showAll {
-  display: inline-block;
-  font-size: 1.4rem;
-  font-weight: 500;
+  display: inline-block !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
 }
 
-.Miyagi-link:not(.has-logo)[aria-current] {
-  background: var(--Miyagi-color-Link-active-background, --Miyagi-color-Link);
-  border-radius: var(--Miyagi-borderRadius);
-  color: var(--Miyagi-color-Link-active);
-  display: inline-block;
+.Miyagi-link:not(.has-logo)[aria-current],
+.Miyagi-link:not(.has-logo):focus,
+.Miyagi-link:not(.has-logo):active {
+  background: var(
+    --Miyagi-color-Link-active-background,
+    --Miyagi-color-Link
+  ) !important;
+  border-radius: var(--Miyagi-borderRadius) !important;
+  color: var(--Miyagi-color-Link-active) !important;
+  display: inline-block !important;
 }
 
 .Miyagi-component.Miyagi-link {
-  font-weight: 600;
+  font-weight: 600 !important;
 }
 
 .Miyagi-toggle {
-  display: block;
-  font-size: 1.5em;
-  height: 1em;
-  position: absolute;
-  right: calc(100% - var(--right));
-  text-indent: -9999em;
-  top: 0;
-  width: 1em;
+  display: block !important;
+  font-size: 1.5em !important;
+  height: 1em !important;
+  position: absolute !important;
+  right: calc(100% - var(--right)) !important;
+  text-indent: -9999em !important;
+  top: 0 !important;
+  width: 1em !important;
 }
 
 .Miyagi-toggle::after {
-  border: var(--Miyagi-toggle-border);
-  border-width: var(--Miyagi-toggle-borderWidth);
-  content: "";
-  display: block;
-  font-size: var(--Miyagi-toggle-fontSize);
-  height: var(--Miyagi-toggle-height);
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transition: var(--Miyagi-toggle-transition);
-  width: var(--Miyagi-toggle-width);
+  border: var(--Miyagi-toggle-border) !important;
+  border-width: var(--Miyagi-toggle-borderWidth) !important;
+  content: "" !important;
+  display: block !important;
+  font-size: var(--Miyagi-toggle-fontSize) !important;
+  height: var(--Miyagi-toggle-height) !important;
+  left: 50% !important;
+  position: absolute !important;
+  top: 50% !important;
+  transition: var(--Miyagi-toggle-transition) !important;
+  width: var(--Miyagi-toggle-width) !important;
 }
 
 .Miyagi-toggle[aria-expanded="false"]::after {
-  transform: var(--Miyagi-toggle-transition-closed);
+  transform: var(--Miyagi-toggle-transition-closed) !important;
 }
 
 .Miyagi-toggle[aria-expanded="true"]::after {
-  transform: var(--Miyagi-toggle-transition-opened);
+  transform: var(--Miyagi-toggle-transition-opened) !important;
 }
 
 @media (max-width: 40em) {
   .Miyagi-projectLogo {
-    height: 3rem;
+    height: 30px !important;
   }
 }
 
 @media (pointer: coarse) {
   .Miyagi-list {
-    --spacingTop: 1.25rem;
-    --spacingLeft: 1.5rem;
+    --spacingTop: 12px;
+    --spacingLeft: 15px;
   }
 
   .Miyagi-listContainer {
-    margin-left: 2rem;
+    margin-left: 20px !important;
   }
 
   .Miyagi-listItem:not(.Miyagi-listItem--lvl0):not(:last-child) {
-    padding-bottom: 1rem;
+    padding-bottom: 10px !important;
   }
 
   .Miyagi-toggle {
-    --right: -0.75rem;
+    --right: -8px;
   }
 
   .Miyagi-toggle--lvl0 {
@@ -142,25 +147,25 @@
   }
 
   .Miyagi-component--lvl0 {
-    margin-left: 1rem;
+    margin-left: 10px !important;
   }
 }
 
 @media (pointer: fine) {
   .Miyagi-list {
-    --spacingTop: 0.5rem;
-    --spacingLeft: 1rem;
+    --spacingTop: 5px;
+    --spacingLeft: 10px;
   }
 
   .Miyagi-listContainer {
-    margin-left: 1.5rem;
+    margin-left: 15px !important;
   }
 
   .Miyagi-listItem:not(.Miyagi-listItem--lvl0):not(:last-child) {
-    padding-bottom: 0.5rem;
+    padding-bottom: 5px !important;
   }
 
   .Miyagi-toggle {
-    --right: 0rem; /* stylelint-disable-line */
+    --right: 0px; /* stylelint-disable-line */
   }
 }

@@ -30,9 +30,6 @@ module.exports = async function renderMain404({ app, res, file, variation }) {
     miyagiProd: !process.env.MIYAGI_DEVELOPMENT,
     isBuild: app.get("config").isBuild,
     theme: app.get("config").ui.theme,
-    indexPath: app.get("config").isBuild
-      ? "component-all-embedded.html"
-      : "/component?file=all&embedded=true",
     basePath: app.get("config").isBuild
       ? app.get("config").build.basePath
       : "/",

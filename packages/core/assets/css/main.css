@@ -3,11 +3,13 @@
 @import "./_test.css";
 @import "./_results.css";
 @import "./_result.css";
+@import "./iframe.css";
+@import "./styleguide.css";
 
 :root {
   --Miyagi-fontFamily: -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto",
     "Helvetica", "Arial", sans-serif;
-  --Miyagi-fontSize: 1.6rem;
+  --Miyagi-fontSize: 16px;
   --Miyagi-lineHeight: 1.5;
 
   /* light */
@@ -29,11 +31,11 @@
   --Miyagi-color-Positive: #690;
 
   /* misc */
-  --Miyagi-borderRadius: 0.25rem;
-  --Miyagi-linkSpacing: 0.35rem;
+  --Miyagi-borderRadius: 3px;
+  --Miyagi-linkSpacing: 3px;
   --Miyagi-toggle-border: 0 solid var(--Miyagi-color-Link);
   --Miyagi-toggle-borderWidth: 0.25em 0.25em 0 0;
-  --Miyagi-toggle-fontSize: 0.6rem;
+  --Miyagi-toggle-fontSize: 6px;
   --Miyagi-toggle-height: 1em;
   --Miyagi-toggle-transition: transform 0.15s ease;
   --Miyagi-toggle-width: 1em;
@@ -58,164 +60,161 @@
 *,
 *::after,
 *::before {
-  box-sizing: border-box;
+  box-sizing: border-box !important;
 }
 
 html {
-  font-size: 62.5%;
-  height: 100%;
+  height: 100% !important;
 }
 
 body {
-  background: var(--Miyagi-color-Background2);
-  color: var(--Miyagi-color-Text);
+  background: var(--Miyagi-color-Background2) !important;
+  color: var(--Miyagi-content-color-Text) !important;
+  overflow-x: initial !important;
 }
 
 .Miyagi {
-  display: grid;
-  font-family: var(--Miyagi-fontFamily);
-  font-size: var(--Miyagi-fontSize);
-  line-height: var(--Miyagi-lineHeight);
-  min-height: 100%;
+  display: grid !important;
+  font-family: var(--Miyagi-fontFamily) !important;
+  font-size: var(--Miyagi-fontSize) !important;
+  line-height: var(--Miyagi-lineHeight) !important;
+  min-height: 100% !important;
 }
 
 .Miyagi-nav {
-  display: flex;
-  background: var(--Miyagi-color-Background);
-  grid-area: nav;
-  overflow-y: auto;
+  display: flex !important;
+  background: var(--Miyagi-color-Background) !important;
+  grid-area: nav !important;
+  overflow-y: auto !important;
   padding: var(--Miyagi-spacing-y) var(--Miyagi-spacing-x)
-    var(--Miyagi-spacing-x);
+    var(--Miyagi-spacing-x) !important;
 }
 
 .Miyagi-content {
-  grid-area: iframe;
+  grid-area: iframe !important;
+  overflow-x: hidden !important;
 }
 
 .Miyagi-frameWrapper {
-  height: 100%;
-  width: 100%;
-}
-
-.Miyagi-frame {
-  display: block;
-  height: 100%;
-  width: 100%;
+  height: 100% !important;
+  width: 100% !important;
 }
 
 .Miyagi-tests {
-  grid-area: tests;
-  padding-right: 4rem;
+  grid-area: tests !important;
+  padding-right: 40px !important;
 }
 
 .Miyagi-buildDate {
-  font-size: 1.2rem;
-  color: var(--Miyagi-color-Link);
-  opacity: 0.75;
+  font-size: 12px !important;
+  color: var(--Miyagi-color-Link) !important;
+  opacity: 0.75 !important;
 }
 
 @media (max-width: 40em) {
   :root {
-    --Miyagi-spacing-x: 1rem;
-    --Miyagi-spacing-y: 1rem;
+    --Miyagi-spacing-x: 10px;
+    --Miyagi-spacing-y: 10px;
   }
 
   .Miyagi {
     grid-template:
       "nav"
       "iframe" 1fr
-      "tests";
+      "tests" !important;
   }
 
   .Miyagi-menu,
   .Miyagi-toggleMobileMenu {
-    order: 1;
+    order: 1 !important;
   }
 
   .Miyagi-menu {
-    flex: 0 0 100%;
-    padding-left: var(--Miyagi-spacing-x);
-    padding-right: var(--Miyagi-spacing-x);
+    flex: 0 0 100% !important;
+    padding-left: var(--Miyagi-spacing-x) !important;
+    padding-right: var(--Miyagi-spacing-x) !important;
   }
 
   .Miyagi-toggleMobileMenu[aria-expanded="false"] + .Miyagi-menu {
-    display: none;
+    display: none !important;
   }
 
   .Miyagi-nav {
-    align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-left: 0;
-    padding-right: 0;
+    align-items: center !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
   .Miyagi-title {
-    max-width: 50%;
-    padding-left: var(--Miyagi-spacing-x);
+    max-width: 50% !important;
+    padding-left: var(--Miyagi-spacing-x) !important;
   }
 
   .Miyagi-toggleMobileMenu {
-    --size: 2rem;
+    --size: 20px;
 
-    box-sizing: content-box;
-    display: block;
-    height: var(--size);
-    padding: 1rem;
-    position: relative;
-    width: var(--size);
+    box-sizing: content-box !important;
+    display: block !important;
+    height: var(--size) !important;
+    padding: 10px !important;
+    position: relative !important;
+    width: var(--size) !important;
   }
 
   .Miyagi-toggleMobileMenu::after {
-    border: var(--Miyagi-toggle-border);
-    border-width: var(--Miyagi-toggle-borderWidth);
-    content: "";
-    display: block;
-    font-size: 0.75em;
-    height: var(--Miyagi-toggle-height);
-    left: 50%;
-    position: absolute;
-    top: 50%;
-    transition: var(--Miyagi-toggle-transition);
-    width: var(--Miyagi-toggle-width);
+    border: var(--Miyagi-toggle-border) !important;
+    border-width: var(--Miyagi-toggle-borderWidth) !important;
+    content: "" !important;
+    display: block !important;
+    font-size: 0.75em !important;
+    height: var(--Miyagi-toggle-height) !important;
+    left: 50% !important;
+    position: absolute !important;
+    top: 50% !important;
+    transition: var(--Miyagi-toggle-transition) !important;
+    width: var(--Miyagi-toggle-width) !important;
   }
 
   .Miyagi-toggleMobileMenu[aria-expanded="false"]::after {
-    transform: var(--Miyagi-toggle-transition-closed);
+    transform: var(--Miyagi-toggle-transition-closed) !important;
   }
 
   .Miyagi-toggleMobileMenu[aria-expanded="true"]::after {
-    transform: var(--Miyagi-toggle-transition-opened);
+    transform: var(--Miyagi-toggle-transition-opened) !important;
   }
 
   .Miyagi-tests {
-    padding: 4rem;
+    padding: 40px !important;
   }
 }
 
 @media (min-width: 40.03125em) {
   :root {
-    --Miyagi-spacing-x: 2rem;
-    --Miyagi-spacing-y: 4rem;
+    --Miyagi-spacing-x: 20px;
+    --Miyagi-spacing-y: 40px;
   }
 
   .Miyagi-nav {
-    flex-direction: column;
-    height: 100vh;
+    flex-direction: column !important;
+    height: 100vh !important;
+    position: sticky !important;
+    top: 0 !important;
   }
 
   .Miyagi-menu {
-    flex: 1;
+    flex: 1 !important;
   }
 
   .Miyagi-toggleMobileMenu {
-    display: none;
+    display: none !important;
   }
 
   .Miyagi-tests {
-    max-height: var(--maxHeight);
-    -webkit-overflow-scrolling: touch;
-    overflow-y: auto;
+    max-height: var(--maxHeight) !important;
+    -webkit-overflow-scrolling: touch !important;
+    overflow-y: auto !important;
   }
 }
 
@@ -223,31 +222,31 @@ body {
   .Miyagi {
     grid-template-areas:
       "nav iframe"
-      "nav tests";
-    grid-template-columns: 25rem 1fr;
-    grid-template-rows: 1fr auto;
+      "nav tests" !important;
+    grid-template-columns: 250px 1fr !important;
+    grid-template-rows: 1fr auto !important;
   }
 
   .Miyagi-tests {
     --maxHeight: 50vh;
 
-    padding-left: 4rem;
-    padding-top: 4rem;
+    padding-left: 40px !important;
+    padding-top: 40px !important;
   }
 }
 
 @media (min-width: 64.03125em) {
   .Miyagi {
-    grid-template-areas: "nav iframe tests";
-    grid-template-columns: 25rem 1fr auto;
+    grid-template-areas: "nav iframe tests" !important;
+    grid-template-columns: 250px 1fr auto !important;
   }
 
   .Miyagi-tests {
     --maxHeight: 100vh;
 
-    min-width: 30rem;
-    padding-top: 4rem;
-    width: 20vw;
+    min-width: 300px !important;
+    padding-top: 40px !important;
+    width: 20vw !important;
   }
 }
 
