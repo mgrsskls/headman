@@ -128,7 +128,8 @@ module.exports = (app) => {
               }
               resolve();
             })
-            .catch(() => {
+            .catch((err) => {
+              console.log(err);
               reject();
             });
         })
@@ -147,7 +148,8 @@ module.exports = (app) => {
           process.exit(0);
         }
       })
-      .catch(() => {
+      .catch((err) => {
+        console.log(err);
         log("error", appConfig.messages.buildFailed);
         process.exit(1);
       });
